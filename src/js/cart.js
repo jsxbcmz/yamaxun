@@ -77,10 +77,6 @@
                 _this.$i = $(this).parents('.items').attr('sid');
                 _this.num = $(this).parents('.number').find('input').val();
                 _this.num++;
-                if (_this.num > 10) {
-                    alert('最多添加10件');
-                    return false;
-                }
                 $(this).parents('.number').find('input').val(_this.num);
                 _this.getTotalPrice(_this.$i, _this.num);
             });

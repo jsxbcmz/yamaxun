@@ -16,21 +16,23 @@
             let _this = this;
             this.$positionArr = [$('.specialBox').position().top + 117, $('.topBox').position().top + 117, $('.typesBox').position().top + 117];
             //关闭广告并在10秒内刷新不显示底部广告
+            this.$time = getcookie('adtime');
+            this.$nowtime = Date.now();
+            if (this.$time) {
+                if ((this.$nowtime - this.$time) > 10000) {
+                    this.$ad.show();
+                } else {
+                    this.$ad.hide();
+                }
+            } else {
+                this.$ad.show();
+            }
             this.$closeBtn.on('click', function () {
                 _this.$ad.hide();
-                this.$time = getcookie('nowtime');
-                this.$nowtime = Date.now();
-                if ((this.$nowtime - this.$time) > 10000) {
-                    addcookie('nowtime', _this.$nowtime, 30);
-                }
+                _this.$nowtime = Date.now();
+                addcookie('adtime', _this.$nowtime, 30);
             });
-            this.$time = getcookie('nowtime');
-            this.$nowtime = Date.now();
-            if ((this.$nowtime - this.$time) > 10000) {
-                _this.$ad.show();
-            } else {
-                _this.$ad.hide();
-            }
+
             //侧边栏定位,移动和楼梯效果
             this.$aside.css({
                 'display': 'block',
@@ -73,7 +75,6 @@
                 }
             });
         }
-
     }
     new index().init();
 

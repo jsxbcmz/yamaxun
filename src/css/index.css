@@ -15,6 +15,7 @@ body>div {
     left: 50%;
     margin-left: -300px;
     z-index: 500;
+    display: none;
 }
 
 .ad img {

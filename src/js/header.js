@@ -79,76 +79,73 @@
     }
     new check().init();
 
-    class many {
+    // class many {
+    //     constructor() {
+    //         this.$little = $('.header_bottom_left_detail');
+    //         this.$big = $('.header_bottom_left_detail_');
+    //         this.timer = null;
+    //     }
+    //     init() {
+    //         let _this = this;
+    //         this.$little.hover(function () {
+    //             clearTimeout(_this.timer);
+    //             _this.$big.show().stop(true).animate({
+    //                 width: 546
+    //             });
+
+    //         }, function () {
+    //             _this.timer = setTimeout(function () {
+    //                 _this.$big.stop(true).animate({
+    //                     width: 0
+    //                 }, function () {
+    //                     _this.$big.hide();
+    //                 });
+    //             }, 50);
+    //         });
+    //         this.$big.hover(function () {
+    //             clearTimeout(_this.timer);
+    //             $(this).css({
+    //                 width: 546
+    //             })
+    //         }, function () {
+    //             $(this).stop(true).animate({
+    //                 width: 0
+    //             })
+    //         })
+    //         this.$little.find('div').hover(function () {
+    //             $(this).addClass('weight').siblings().removeClass('weight');
+    //         }, function () {
+    //             let __this = this;
+    //             _this.$big.on('mouseout', function () {
+    //                 $(__this).removeClass('weight');
+    //             });
+    //             _this.$little.on('mouseout', function () {
+    //                 $(__this).removeClass('weight');
+    //             })
+    //         })
+    //     }
+    // }
+    // new many().init();
+
+    class search {
         constructor() {
-            this.$little = $('.header_bottom_left_detail');
-            this.$big = $('.header_bottom_left_detail_');
-            this.timer = null;
+            this.$input = $('#input');
+            this.$detail = $('.input_detail');
+            this.strhtml = '';
         }
         init() {
             let _this = this;
-            this.$little.hover(function () {
-                clearTimeout(_this.timer);
-                _this.$big.show().stop(true).animate({
-                    width: 546
-                });
-
-            }, function () {
-                _this.timer = setTimeout(function () {
-                    _this.$big.stop(true).animate({
-                        width: 0
-                    }, function () {
-                        _this.$big.hide();
+            this.$input.on('input', function () {
+                _this.$detail.show();
+                _this.strhtml = '';
+                $.getJSON('https://suggest.taobao.com/sug?code=utf-8&q=' + _this.$input.val() + '&_ksTS=1567561434473_421&k=1&area=c2c&bucketid=14&callback=?', function (d) {
+                    $.each(d.result, function (index, value) {
+                        _this.strhtml += `<li><a href="javascript:;">${value[0]}</a></li>`;
                     });
-                }, 50);
-            });
-            this.$big.hover(function () {
-                clearTimeout(_this.timer);
-                $(this).css({
-                    width: 546
-                })
-            }, function () {
-                $(this).stop(true).animate({
-                    width: 0
-                })
-            })
-            this.$little.find('div').hover(function () {
-                $(this).addClass('weight').siblings().removeClass('weight');
-            }, function () {
-                let __this = this;
-                _this.$big.on('mouseout', function () {
-                    $(__this).removeClass('weight');
-                });
-                _this.$little.on('mouseout', function () {
-                    $(__this).removeClass('weight');
+                    _this.$detail.html(_this.strhtml);
                 })
             })
         }
     }
-    new many().init();
+    new search().init();
 })(jQuery);
-
-let oInput = document.querySelector('#input');
-let oDetail = document.querySelector('.input_detail');
-
-function jQ(data) {
-    let list = data.result;
-    let strhtml = '';
-    for (let value of list) {
-        strhtml += `<li><a href="javascript:;">${value[0]}</a></li>`;
-    }
-    oDetail.innerHTML = strhtml;
-}
-
-oInput.addEventListener('input', function () {
-    oDetail.style.display = 'block';
-    if (oInput.value) {
-        let oScript = document.createElement('script');
-        oScript.src = 'https://suggest.taobao.com/sug?code=utf-8&q=' + oInput.value + '&_ksTS=1567561434473_421&callback=jQ&k=1&area=c2c&bucketid=14';
-        //oScript.src = 'https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=1452,21102,29523,29521,29721,29568,29220&wd=' + oInput.value + '&req=2&csor=1&cb=jQ';
-        document.body.appendChild(oScript);
-    } else {
-        oDetail.innerHTML = '';
-    }
-
-});
