@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="icon" href="https://www.amazon.cn/favicon.ico" type="img/x-ico" />
+
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo"></a>
+    </header>
+    <div class="wrongInfo">
+        <em>
+
+        </em>
+        <p>
+            出现了一个问题
+        </p>
+        <span>
+            要创建亚马逊账户，您必须同意网站的使用条件及隐私声明。
+        </span>
+    </div>
+    <div class="main">
+        <h2>创建账户</h2>
+        <div class="username">
+            <h4><label for="username">您的账号</label></h4>
+            <input type="text" name="username" id="username" class="normal">
+            <p class="wrong"><em></em>请输入正确的名字</p>
+        </div>
+        <div class="phone">
+            <h4><label for="phone">手机号码</label></h4>
+            <select name="" id="">
+                <option value="" selected>CN +86</option>
+                <option value="">AB +24</option>
+                <option value="">CD +37</option>
+                <option value="">EF +75</option>
+                <option value="">GH +24</option>
+                <option value="">IJ +82</option>
+            </select>
+            <input type="text" name="phone" id="phone" placeholder="手机号码" class="normal">
+            <p class="wrong" style="padding-left:90px; "><em></em>请输入正确的手机号码</p>
+        </div>
+        <div class="email">
+            <h4><label for="email">电子邮件地址（可选）</label></h4>
+            <input type="text" name="email" id="email" class="normal">
+            <p class="wrong"><em></em>请输入正确的电子邮箱地址</p>
+        </div>
+        <div class="password">
+            <h4><label for="password">密码</label></h4>
+            <input type="password" name="password" id="password" placeholder="至少6个字符" class="normal">
+            <p class="tips"><em></em>密码必须至少为 6 个字符。</p>
+            <p class="wrong"><em></em>请输入正确的密码</p>
+
+        </div>
+        <div>
+            <input type="checkbox" name="" id="checkState" style="-webkit-appearance:checkbox">
+            <label for="state">我已阅读并同意网站的<a href="#">使用条件</a>及<a href="#">隐私声明</a>。</label>
+        </div>
+        <div>
+            <!-- <input type="submit" value="继续" class="register" name="submit"> -->
+            <button class="register">继续</button>
+        </div>
+        <div class="hh weixin">
+            <h5 style="width: 90px;">其他注册方式</h5>
+            <a href="#"><span></span>微信账号注册</a>
+        </div>
+        <div class="login">
+            已拥有账号?<a href="login.html" class="hover">登录</a>
+        </div>
+    </div>
+    <button class="aaa">111</button>
+    <footer>
+        <ul class="clearfix">
+            <li><a href="#" class="hover">使用条件</a></li>
+            <li><a href="#" class="hover">隐私声明</a></li>
+            <li><a href="#" class="hover">帮助</a></li>
+        </ul>
+        <p>版权所有 © 1996-2019，亚马逊公司或其关联公司</p>
+    </footer>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/register.js"></script>
+</body>
+
+</html>

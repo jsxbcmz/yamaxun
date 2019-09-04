@@ -1,0 +1,43 @@
+.goodlist {
+    /* width: 1050px; */
+    margin-left: 245px;
+}
+
+.goodlist li {
+    display: block;
+    width: 210px;
+    height: 400px;
+    float: left;
+    border-bottom: 2px solid #ddd;
+    margin-right: 10px;
+}
+
+.goodlist li a>div {
+    height: 275px;
+    overflow: hidden;
+}
+
+.goodlist li a>div img {
+    vertical-align: middle;
+    float: left;
+}
+
+.goodlist li p {
+    height: 75px;
+    overflow: hidden;
+}
+
+.goodlist li span {
+    font-size: 21px;
+    color: #b12704;
+}
+
+.goodlist li a p {
+    font-size: 15px;
+    color: #111;
+}
+
+.goodlist li a p:hover {
+    color: #c45500;
+    text-decoration: none;
+}

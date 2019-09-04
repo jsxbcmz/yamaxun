@@ -1,0 +1,246 @@
+* {
+    font-size: 12px;
+    color: #111111;
+}
+
+.hover:hover {
+    color: #c45500;
+    text-decoration: underline;
+}
+
+a {
+    color: #0060c0;
+}
+
+header a {
+    width: 87px;
+    height: 38px;
+    display: block;
+    margin: 20px auto;
+    background: url(https://images-cn.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-sprite_1x-c4a765aedd886dc04d89e7e93b6a02c59ecb7013._V2_.png) -5px -590px no-repeat;
+}
+
+footer {
+    padding: 30px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .14), rgba(0, 0, 0, .03) 3px, transparent);
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+footer ul li {
+    margin: 0 20px;
+}
+
+footer p {
+    color: #555555;
+    text-align: center;
+}
+
+.main {
+    border: 1px #ddd solid;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.main>div {
+    margin: 10px 0;
+}
+
+.main h2 {
+    font-size: 28px;
+}
+
+.main h4 label {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.main h5 {
+    color: #767676;
+    z-index: 5;
+    background: #fff;
+    width: 108px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.main .hh {
+    position: relative;
+    text-align: center;
+}
+
+.main .hh::after {
+    content: "";
+    width: 100%;
+    background-color: transparent;
+    display: block;
+    height: 1px;
+    border-top: 1px solid #e7e7e7;
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    z-index: -1;
+}
+
+.focus {
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228, 121, 17, .5);
+}
+
+.normal {
+    border: 1px solid #a6a6a6;
+    border-top-color: #949494;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 1px 0 rgba(0, 0, 0, .07) inset;
+}
+
+.error {
+    border-color: #d00;
+    box-shadow: 0 0 0 3px rgba(221, 0, 0, .1) inset;
+}
+
+input[type='text']:focus,
+input[type='password']:focus {
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228, 121, 17, .5);
+}
+
+input[type='text'],
+input[type='password'] {
+    box-sizing: border-box;
+    border-width: 1px;
+    width: 100%;
+    height: 30px;
+    text-indent: 0.5em;
+    border-radius: 3px;
+    outline: 0;
+    margin: 10px 0;
+}
+
+
+.main .register {
+    width: 100%;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset;
+    cursor: pointer;
+    outline: 0;
+    font-size: 13px;
+    background: #f0c14b;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    line-height: 25px;
+}
+
+.main .register:hover {
+    background: linear-gradient(to bottom, #f5d78e, #eeb933);
+}
+
+.main .weixin a {
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-size: 13px;
+    line-height: 34px;
+    border-radius: 3px;
+    margin: 10px 0;
+    background: -webkit-linear-gradient(top, #13d71f, #63d71f);
+}
+
+.main .weixin a:hover {
+    text-decoration: none;
+}
+
+.main .login {
+    height: 44px;
+    padding-top: 30px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .14), rgba(0, 0, 0, .03) 3px, transparent);
+}
+
+.main .phone select {
+    width: 80px;
+    height: 27px;
+    line-height: 27px;
+    display: inline-block;
+    font-size: 13px;
+    border-color: #adb1b8 #a2a6ac #8d9096;
+    border-style: solid;
+    border-width: 1px;
+    background: linear-gradient(to bottom, #f7f8fa, #e7e9ec);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset;
+    border-radius: 2px;
+    text-indent: 0.75em;
+}
+
+.main .phone #phone {
+    width: 205px;
+    margin-left: 9px;
+}
+
+.wrong {
+    display: none;
+    color: #c40000;
+}
+
+.tips em,
+.wrong em {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url(https://images-cn.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-sprite_1x-c4a765aedd886dc04d89e7e93b6a02c59ecb7013._V2_.png);
+}
+
+
+.tips em {
+    background-position: -163px -128px;
+}
+
+.wrong em {
+    background-position: -137px -128px;
+}
+
+.main .password .tips {
+    color: #2b2b2b;
+}
+
+.wrongInfo {
+    box-sizing: border-box;
+    border: 1px #c40000 solid;
+    box-shadow: 0 0 0 4px #fcf4f4 inset;
+    padding: 12px 20px 12px 65px;
+    width: 342px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    position: relative;
+    display: none;
+
+}
+
+.wrongInfo em {
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 30px;
+    height: 27px;
+    background: url(https://images-cn.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-sprite_1x-c4a765aedd886dc04d89e7e93b6a02c59ecb7013._V2_.png) -248px -35px no-repeat;
+}
+
+.wrongInfo p {
+    font-size: 17px;
+    color: #c40000;
+    margin-bottom: 5px;
+}
+
+.wrongInfo span {
+    font-size: 13px;
+}

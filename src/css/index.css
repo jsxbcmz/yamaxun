@@ -1,0 +1,399 @@
+body {
+    position: relative;
+}
+
+body>div {
+    padding: 10px 20px;
+}
+
+.ad {
+    padding: 0;
+    width: 600px;
+    height: 120px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    margin-left: -300px;
+    z-index: 500;
+}
+
+.ad img {
+    width: 600px;
+}
+
+.ad .closeBtn {
+    width: 24px;
+    height: 24px;
+    background: #000;
+    position: absolute;
+    opacity: 0;
+    right: 8px;
+    top: 4px;
+    cursor: pointer;
+}
+
+.aside {
+    width: 50px;
+    position: absolute;
+    right: 50px;
+    /* bottom: 100px; */
+    display: none;
+    z-index: 500;
+}
+
+.aside .aside-items {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2px;
+    font-size: 13px;
+    text-align: center;
+    padding: 8px;
+    background: #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #0055aa;
+}
+
+.aside .aside-items:hover {
+    background: #c45500;
+    color: #fff;
+}
+
+.aside .aside-active {
+    background: #c45500;
+    color: #fff;
+}
+
+.swiper {
+    padding: 0;
+    width: 1160px;
+    height: 300px;
+    margin-left: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper ul {
+    margin-left: -170px;
+    width: 1500px;
+    height: 300px;
+    position: relative;
+}
+
+.swiper ul li {
+    position: absolute;
+    display: none;
+}
+
+.swiper .active_ul {
+    display: block;
+}
+
+.swiper ol {
+    position: absolute;
+    width: 1160px;
+    bottom: -45px;
+}
+
+.swiper ol li {
+    float: left;
+    width: 12.41%;
+    height: 50px;
+    background: #000;
+    opacity: 0.6;
+    border-right: 1px solid #ccc;
+}
+
+.swiper ol li a {
+    padding-top: 5px;
+    width: 80%;
+    margin: 0 10%;
+    height: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    line-height: 20px;
+    font-size: 13px;
+    color: #fff;
+    display: block;
+}
+
+
+.swiper ol li:hover a {
+    text-decoration: none;
+}
+
+.swiper .active_ol {
+    background-color: #ff8c00;
+    opacity: 1;
+    font-weight: 700;
+}
+
+.leftBtn,
+.rightBtn {
+    width: 60px;
+    height: 80px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.leftBtn {
+    left: 10px;
+    top: 50%;
+    margin-top: -40px;
+    background: url(https://images-cn.ssl-images-amazon.com/images/G/28/gwfloor/static/images/arrow-l._CB349916960_.png)center center no-repeat;
+}
+
+.rightBtn {
+    right: 37px;
+    top: 50%;
+    margin-top: -40px;
+    background: url(https://images-cn.ssl-images-amazon.com/images/G/28/gwfloor/static/images/arrow-r._CB349916960_.png) center center no-repeat;
+}
+
+.h,
+.special {
+    width: 1010px;
+}
+
+.h {
+    font-size: 28px;
+    font-weight: 700;
+    vertical-align: bottom;
+}
+
+.h a {
+    color: #0066c0;
+    margin-left: 10px;
+    font-size: 15px;
+    vertical-align: bottom;
+    font-weight: normal;
+}
+
+.h a:hover {
+    text-decoration: none;
+}
+
+.special li {
+    width: 200px;
+    float: left;
+    background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
+    margin-right: 2px;
+}
+
+.special li a:hover {
+    text-decoration: none;
+}
+
+.special li a div {
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.special li a p {
+    margin: 10px 10px 0;
+}
+
+.special li a .price {
+    color: #b12704;
+    font-size: 17px;
+}
+
+.special li a .title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111;
+}
+
+.special li a .time,
+.special li a .time span {
+    font-size: 13px;
+    color: #111;
+}
+
+.top {
+    box-sizing: border-box;
+    width: 1000px;
+    border: 1px solid #d8d8d8;
+}
+
+.top li {
+    position: relative;
+    float: left;
+    width: 198px;
+    margin-right: 2px;
+    background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
+}
+
+.top li:nth-child(5),
+.top li:nth-child(10) {
+    margin-right: 0px;
+}
+
+.top li a div {
+    padding: 10px;
+}
+
+.top li a p {
+    display: inline-block;
+}
+
+.top li a p span {
+    font-size: 17px;
+}
+
+.top li a em {
+    display: inline-block;
+    width: 53px;
+    height: 15px;
+    background-image: url(https://images-cn.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUIIcon@spritePackerImages-beacon_light_1x-6d11bd1ecd21789f53270cbd462c4451efaccf78._V2_.png);
+    background-position: -84px -2px;
+    background-color: transparent;
+}
+
+.top li:hover button {
+    display: block;
+}
+
+.top li button {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #666;
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    top: 200px;
+    display: none;
+    cursor: pointer;
+}
+
+.h {
+    font-size: 28px;
+    color: #111;
+}
+
+.types {
+    width: 1000px;
+}
+
+.types li {
+    position: relative;
+    float: left;
+    width: 198px;
+    margin-right: 2px;
+    background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
+}
+
+.types li:last-child {
+    margin-right: 0px;
+}
+
+.types li a div {
+    padding: 10px;
+}
+
+.types li a div img {
+    border-radius: 50%
+}
+
+.types li a p {
+    text-align: center;
+    color: #111;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.types a:hover p {
+    text-decoration: none;
+}
+
+.selected {
+    margin-left: 180px;
+    box-sizing: border-box;
+}
+
+.selected li {
+    padding: 0 20px;
+    width: 235px;
+    height: 140px;
+    float: left;
+    position: relative;
+}
+
+.selected li .title {
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.selected li .FF8C00:hover {
+    color: #ff8c00;
+}
+
+.selected li .title span {
+    color: #cd4d00;
+    font-size: 18px;
+}
+
+.selected li .hot {
+    color: #b12704;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.selected li .price {
+    font-size: 23px;
+    color: #b12704;
+}
+
+.selected li .time {
+    font-size: 13px;
+    color: #767676;
+    margin-bottom: 15px;
+}
+
+.selected li .pic {
+    width: 134px;
+    height: 134px;
+    position: absolute;
+    right: 5px;
+    top: 20px;
+}
+
+.selected li .pic img {
+    width: 134px;
+    height: 134px;
+}
+
+.selected li .more {
+    color: #767676;
+}
+
+.FIBA {
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    background: #0b1d32;
+}
+
+.FIBA img {
+    display: block;
+    width: 1029px;
+    margin: 0 auto;
+}
+
+.FIBA .img2 {
+    width: 820px;
+    height: 460px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -410px;
+    display: none;
+    z-index: 200;
+}

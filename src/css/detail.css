@@ -1,0 +1,176 @@
+img {
+    display: block;
+}
+
+body {
+    padding: 10px 20px;
+
+}
+
+* {
+    font-size: 13px;
+    color: #111;
+}
+
+.header {
+    margin: 0px 0 20px 0px;
+}
+
+.header a {
+    font-size: 12px;
+    color: #767676;
+}
+
+.show {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    position: relative;
+    height: 900px;
+}
+
+.picList {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+}
+
+.picList_div {
+    width: 38px;
+    height: 50px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #999;
+    position: relative;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+
+.picList_active {
+    border-color: #e47911;
+    box-shadow: 0 0 3px 2px rgba(228, 121, 17, .5);
+}
+
+.picList_div img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.picShow {
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    left: 60px;
+    top: 0;
+    z-index: 50;
+}
+
+.picShow .smallPic {
+    /* width: 500px; */
+    position: relative;
+}
+
+.picShow .smallPic .smallM {
+    width: 100px;
+    height: 100px;
+    background: url(https://images-cn.ssl-images-amazon.com/images/G/28/apparel/rcxgs/tile._CB483369751_.gif);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.picShow p {
+    text-align: center;
+    color: #555;
+}
+
+.picShow .bigM {
+    background: #fff;
+    overflow: hidden;
+    position: absolute;
+    background-color: white;
+    z-index: 190;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 6px 8px 2px;
+    border: 1px solid rgb(148, 148, 148);
+    left: 500px;
+    top: 10px;
+    width: 600px;
+    height: 600px;
+    display: none;
+}
+
+.picShow .bigM .bigPic {
+    position: absolute;
+}
+
+.details {
+    width: 440px;
+    position: absolute;
+    left: 560px;
+}
+
+.details h3 {
+    font-size: 19px;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.details span {
+    color: #555;
+}
+
+.show em {
+    font-size: 17px;
+    color: #b12704;
+}
+
+.order {
+    position: absolute;
+    left: 1020px;
+}
+
+.order>div {
+    margin-left: 20px;
+    /* width: 280px; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.order a {
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    display: block;
+    border-color: #ADB1B8 #A2A6AC #8D9096;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset;
+    background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+    position: relative;
+    text-indent: 2em;
+    text-align: center;
+}
+
+.order a:hover {
+    background: #f0c14b;
+    text-decoration: none;
+}
+
+.order a span {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    display: inline-block;
+    background: url(https://images-cn.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUIIcon@spritePackerImages-sprite_1x-003a05344e6a5263c945684c66748394b4cbb9a2._V2_.png) no-repeat -35px -5px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="icon" href="https://www.amazon.cn/favicon.ico" type="img/x-ico" />
+
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo"></a>
+    </header>
+    <div class="wrongInfo">
+        <em>
+
+        </em>
+        <p>
+            帐号或者密码错误
+        </p>
+        <span>
+            您输入的电话号码不能用于登录。请检查您输入号码是否正确，或使用您的电子邮箱登录。
+        </span>
+    </div>
+    <div class="main">
+        <h2>登录</h2>
+        <div class="username">
+            <h4><label for="username">邮箱地址或手机号码</label></h4>
+            <input type="text" name="username" id="username">
+            <p style="display: none"><span></span>输入您的邮箱地址或手机号码</p>
+        </div>
+        <div class="password clearfix">
+            <h4><label for="password">密码</label> <a href="#" class="hover fr" style="font-weight: normal">忘记密码</a></h4>
+            <input type="password" name="password" id="password">
+            <p style="display: none"><span></span>请输入您的密码</p>
+        </div>
+
+        <div>
+            <button class="login">登录</button>
+        </div>
+        <div>
+            <input type="checkbox" name="" id="state" style="-webkit-appearance:checkbox">
+            <label for="state">记住登录状态。</label><a href="#" class="hover">详情</a>
+        </div>
+        <div class="hh weixin">
+            <h5 style="width: 90px;">更多登录方式</h5>
+            <a href="#"><span></span>微信账号注册</a>
+        </div>
+        <div class="hh register">
+            <h5>Amazon的新客户？</h5><a href="register.html">创建您的Amazon账户</a>
+        </div>
+        <div>
+            登录即表示您同意网站的<a href="#" class="hover">使用条件</a>及<a href="#" class="hover">隐私声明</a>
+        </div>
+    </div>
+    <footer>
+        <ul class="clearfix">
+            <li><a href="#" class="hover">使用条件</a></li>
+            <li><a href="#" class="hover">隐私声明</a></li>
+            <li><a href="#" class="hover">帮助</a></li>
+        </ul>
+        <p>版权所有 © 1996-2019，亚马逊公司或其关联公司</p>
+    </footer>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/public.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

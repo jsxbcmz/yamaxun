@@ -1,0 +1,143 @@
+a {
+    color: #0060c0;
+}
+
+* {
+    color: #111;
+    font-size: 13px;
+}
+
+body {
+    padding: 16px;
+}
+
+.empty h3 {
+    font-size: 28px;
+}
+
+.empty a {
+    text-decoration: underline;
+}
+
+.cart {
+    width: 960px;
+}
+
+.cart .title {
+    margin-top: 20px;
+    position: relative;
+}
+
+.cart .title h4 {
+    font-weight: 700;
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.cart .title span {
+    position: absolute;
+}
+
+.cart .title span:first-of-type {
+    left: 655px;
+}
+
+.cart .title span:last-child {
+    right: 10px;
+}
+
+.cart .items {
+    display: flex;
+    padding: 10px 0;
+    height: 160px;
+}
+
+.cart>div {
+    border-bottom: 1px solid #ccc;
+}
+
+.cart .items>a {
+    width: 150px;
+    overflow: hidden;
+}
+
+.cart .items .content {
+    margin-left: 10px;
+    width: 450px;
+}
+
+.content-title {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.check {
+    display: block;
+    line-height: 160px;
+    height: 160px;
+}
+
+.price {
+    font-size: 17px;
+    color: #B12704;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.number {
+    margin-left: 150px;
+}
+
+.number button,
+.number input {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.number input {
+    width: 30px;
+    height: 17px;
+    border: 1px solid #555;
+}
+
+.sum,
+.sum span {
+    font-size: 17px;
+}
+
+.cart .sum {
+    border-bottom-width: 0;
+    margin: 10px 0;
+}
+
+.cart .buy {
+    cursor: pointer;
+    width: 260px;
+    height: 30px;
+    box-sizing: border-box;
+    background: #f0c14b;
+    border: 1px solid #999;
+    border-color: #a88734 #9c7e31 #846a29;
+    border-radius: 5px;
+    color: #111;
+    font-size: 13px;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+    margin: 45px 0 30px 700px;
+}
+
+.cart .buy span {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 5px;
+    top: 1px;
+    background-image: url(https://images-cn.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUIIcon@spritePackerImages-sprite_1x-003a05344e6a5263c945684c66748394b4cbb9a2._V2_.png);
+    background-size: 400px 900px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: top;
+    background-position: -58px -35px;
+}

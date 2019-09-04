@@ -1,0 +1,71 @@
+.history {
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    position: relative;
+}
+
+.history_header {
+    font-size: 17px;
+    color: #111;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.history_ul {
+    height: 140px;
+    line-height: 140px;
+    width: 700px;
+    overflow: hidden;
+    margin-left: 80px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+button.left,
+button.right {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 34px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-color: #ADB1B8 #A2A6AC #8D9096;
+    border-style: solid;
+    border-width: 1px;
+    outline: none;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset;
+    background: linear-gradient(to bottom, #f7f8fa, #e7e9ec);
+    background-image: url(https://images-cn.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUIIcon@spritePackerImages-sprite_1x-003a05344e6a5263c945684c66748394b4cbb9a2._V2_.png);
+}
+
+.history_ul button:hover {
+    background-color: #eee;
+}
+
+button.left {
+    background-position: -115px 0px;
+    margin-left: 20px;
+    left: 6px;
+    top: 90px;
+}
+
+button.right {
+    background-position: -96px 0px;
+    left: 800px;
+    top: 90px;
+}
+
+.history_ul .history_list {
+    width: 10000px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.history_list a {
+    display: block;
+    width: 100px;
+    height: 120px;
+    margin: 0 20px;
+    float: left;
+}
