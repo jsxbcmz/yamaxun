@@ -10,6 +10,7 @@
             this.$clone = null;
             this.$leftBtn = $('.left');
             this.$rightBtn = $('.right');
+            this.$number = $('.number input');
             this.$num = 0;
             this.$i = 0;
             this.$j = 0;
@@ -121,7 +122,18 @@
                     alert('请先登录');
                     location.href = 'login.html';
                 }
-            })
+            });
+            this.$number.on('input', function () {
+                _this.$j = parseInt($(this).val()) || 0;
+                $(this).val(_this.$j);
+            });
+            this.$number.on('blur', function () {
+                $(this).val(_this.$j);
+                _this.$i = $(this).parents('.items').attr('sid');
+                _this.num = $(this).parents('.number').find('input').val();
+                $(this).parents('.number').find('input').val(_this.num);
+                _this.getTotalPrice(_this.$i, _this.num);
+            });
         }
         getArr() {
             if (getcookie('sidArr') && getcookie('numArr')) {

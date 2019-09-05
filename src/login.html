@@ -35,7 +35,8 @@
             <p style="display: none"><span></span>输入您的邮箱地址或手机号码</p>
         </div>
         <div class="password clearfix">
-            <h4><label for="password">密码</label> <a href="#" class="hover fr" style="font-weight: normal">忘记密码</a></h4>
+            <h4><label for="password">密码</label> <a href="javascript:;" class="hover fr" style="font-weight: normal"
+                    id="forget">忘记密码</a></h4>
             <input type="password" name="password" id="password">
             <p style="display: none"><span></span>请输入您的密码</p>
         </div>
@@ -57,6 +58,20 @@
         <div>
             登录即表示您同意网站的<a href="#" class="hover">使用条件</a>及<a href="#" class="hover">隐私声明</a>
         </div>
+    </div>
+    <div class="cover">
+
+    </div>
+    <div class="reset">
+        <div class="reset_header clearfix">
+            <a href="index.html" class="fl"></a>
+            <h3 class="fl">重置密码</h3>
+            <button id="reset_close" class="fr">❌</button>
+        </div>
+        <div class="reset_user"><input type="text" id="reset_user" placeholder="账号"></div>
+        <div class="reset_pass"><input type="password" id="reset_pass" placeholder="新密码"></div>
+        <div class="reset_repass"><input type="password" id="reset_repass" placeholder="重复密码"></div>
+        <div class="reset_submit"><button id="reset_submit">提交</button></div>
     </div>
     <footer>
         <ul class="clearfix">

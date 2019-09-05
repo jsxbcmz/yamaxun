@@ -192,3 +192,90 @@ footer p {
 .wrongInfo span {
     font-size: 13px;
 }
+
+.cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    display: none;
+    background: #000;
+    opacity: 0.5;
+}
+
+.reset {
+    width: 300px;
+    height: 230px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    background: #fff;
+    padding: 20px;
+}
+
+.reset_header {
+    height: 38px;
+    line-height: 38px;
+}
+
+.reset_header a {
+    width: 87px;
+    height: 38px;
+    display: block;
+    background: url(https://images-cn.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-sprite_1x-c4a765aedd886dc04d89e7e93b6a02c59ecb7013._V2_.png) -5px -590px no-repeat;
+}
+
+.reset_header h3 {
+    font-size: 18px;
+    color: #000;
+    width: 180px;
+    text-indent: 30px;
+    cursor: move;
+}
+
+.reset_header #reset_close {
+    font-size: 20px;
+    width: 30px;
+    height: 32px;
+    display: block;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    background: #fff;
+    cursor: pointer;
+}
+
+.reset>div {
+    margin-bottom: 20px;
+}
+
+.reset>div input {
+    display: block;
+    width: 100%;
+    height: 24px;
+    border: 1px solid #ddd;
+    transition: .3s;
+    font-size: 14px;
+    color: #666;
+    text-indent: 0.5em;
+}
+
+.reset>div input:focus {
+    border-color: #e77600;
+}
+
+#reset_submit {
+    display: block;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ddd;
+    transition: .3s;
+    font-size: 14px;
+    color: #111;
+    cursor: pointer;
+    background: #f0c14b;
+}
