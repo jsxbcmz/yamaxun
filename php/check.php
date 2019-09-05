@@ -14,8 +14,6 @@ if(isset($_GET['checkname'])){
 
     $result = $conn->query($sql);
 
-    $res = array();
-
     if($result->fetch_assoc()){
         echo false;
     }else{

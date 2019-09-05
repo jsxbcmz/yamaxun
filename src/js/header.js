@@ -37,7 +37,8 @@
                 localStorage.removeItem('userinfo');
                 localStorage.removeItem('passinfo');
                 window.location.reload();
-            })
+            });
+
             this.$login.hover(function () {
                 _this.$login_detail.show();
             }, function () {
@@ -79,53 +80,49 @@
     }
     new check().init();
 
-    // class many {
-    //     constructor() {
-    //         this.$little = $('.header_bottom_left_detail');
-    //         this.$big = $('.header_bottom_left_detail_');
-    //         this.timer = null;
-    //     }
-    //     init() {
-    //         let _this = this;
-    //         this.$little.hover(function () {
-    //             clearTimeout(_this.timer);
-    //             _this.$big.show().stop(true).animate({
-    //                 width: 546
-    //             });
+    class many {
+        constructor() {
+            this.$little = $('.header_bottom_left_detail');
+            this.$big = $('.header_bottom_left_detail_');
+            this.$little_div = $('.header_bottom_left_detail>div');
+            this.$big_div = $('.header_bottom_left_detail_>div');
+            this.index = 0;
+            this.timer = null;
+        }
+        init() {
+            let _this = this;
+            this.$little.hover(function () {
+                clearTimeout(_this.timer);
+                _this.$big.show().stop(true).animate({
+                    width: 546
+                });
 
-    //         }, function () {
-    //             _this.timer = setTimeout(function () {
-    //                 _this.$big.stop(true).animate({
-    //                     width: 0
-    //                 }, function () {
-    //                     _this.$big.hide();
-    //                 });
-    //             }, 50);
-    //         });
-    //         this.$big.hover(function () {
-    //             clearTimeout(_this.timer);
-    //             $(this).css({
-    //                 width: 546
-    //             })
-    //         }, function () {
-    //             $(this).stop(true).animate({
-    //                 width: 0
-    //             })
-    //         })
-    //         this.$little.find('div').hover(function () {
-    //             $(this).addClass('weight').siblings().removeClass('weight');
-    //         }, function () {
-    //             let __this = this;
-    //             _this.$big.on('mouseout', function () {
-    //                 $(__this).removeClass('weight');
-    //             });
-    //             _this.$little.on('mouseout', function () {
-    //                 $(__this).removeClass('weight');
-    //             })
-    //         })
-    //     }
-    // }
-    // new many().init();
+            }, function () {
+                _this.timer = setTimeout(function () {
+                    _this.$big.stop(true).animate({
+                        width: 0
+                    }, function () {
+                        _this.$big.hide();
+                    });
+                }, 50);
+            });
+            this.$big.hover(function () {
+                clearTimeout(_this.timer);
+                $(this).css({
+                    width: 546
+                })
+            }, function () {
+                $(this).stop(true).animate({
+                    width: 0
+                })
+            });
+            this.$little_div.hover(function () {
+                _this.index = $(this).index();
+                _this.$big_div.eq(_this.index).show().siblings().hide();
+            })
+        }
+    }
+    new many().init();
 
     class search {
         constructor() {

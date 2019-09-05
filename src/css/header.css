@@ -236,6 +236,10 @@
     padding: 5px 5px 5px 0;
 }
 
+.header_bottom_left_detail>div:hover {
+    font-weight: 700;
+}
+
 .header_bottom_left_detail>div:last-child {
     border-top: 1px solid #ccc;
     margin-top: 15px;
@@ -275,7 +279,7 @@
 }
 
 .header_bottom_left_detail_>div {
-    width: 100%;
+    width: 544px;
     height: 100%;
     position: absolute;
     left: 0;

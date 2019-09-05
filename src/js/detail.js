@@ -21,39 +21,40 @@
                 data: {
                     sid: this.whatId
                 },
-                dataType: 'json'
-            }).done(function (d) {
-                _this.$data = d;
-                _this.listArr = d.urls.split(',');
-                _this.listStr = '';
-                $.each(_this.listArr, function (index, value) {
-                    _this.listStr += `
-                    <div class="picList_div">
-                    <img src="${value}" alt="">
-                    </div>
-                    `;
-                })
-                $('.picList').html(_this.listStr);
-                $('.picList div').first().addClass('picList_active');
-                $('.smallPic img').attr('src', d.url);
-                $('.bigPic').attr('src', d.url);
-                $('.details h3').html(d.title);
-                $('.details em').html(d.price);
-                _this.i = parseInt(_this.$num.val());
-                $('.order em').html('￥' + d.price * _this.i);
-                _this.$addCart.on('click', function () {
-                    _this.getArr();
-                    if ($.inArray(_this.whatId, _this.sidArr) != -1) {
-                        _this.j = parseInt(_this.numArr[$.inArray(_this.whatId, _this.sidArr)]) + _this.i;
-                        _this.numArr[$.inArray(_this.whatId, _this.sidArr)] = _this.j;
-                        addcookie('numArr', _this.numArr.toString(), 30);
-                    } else {
-                        _this.sidArr.push(_this.whatId);
-                        _this.numArr.push(_this.i);
-                        addcookie('sidArr', _this.sidArr.toString(), 30);
-                        addcookie('numArr', _this.numArr.toString(), 30);
-                    }
-                });
+                dataType: 'json',
+                success: function (d) {
+                    _this.$data = d;
+                    _this.listArr = d.urls.split(',');
+                    _this.listStr = '';
+                    $.each(_this.listArr, function (index, value) {
+                        _this.listStr += `
+                            <div class="picList_div">
+                            <img src="${value}" alt="">
+                            </div>
+                            `;
+                    })
+                    $('.picList').html(_this.listStr);
+                    $('.picList div').first().addClass('picList_active');
+                    $('.smallPic img').attr('src', d.url);
+                    $('.bigPic').attr('src', d.url);
+                    $('.details h3').html(d.title);
+                    $('.details em').html(d.price);
+                    _this.i = parseInt(_this.$num.val());
+                    $('.order em').html('￥' + d.price * _this.i);
+                    _this.$addCart.on('click', function () {
+                        _this.getArr();
+                        if ($.inArray(_this.whatId, _this.sidArr) != -1) {
+                            _this.j = parseInt(_this.numArr[$.inArray(_this.whatId, _this.sidArr)]) + _this.i;
+                            _this.numArr[$.inArray(_this.whatId, _this.sidArr)] = _this.j;
+                            addcookie('numArr', _this.numArr.toString(), 30);
+                        } else {
+                            _this.sidArr.push(_this.whatId);
+                            _this.numArr.push(_this.i);
+                            addcookie('sidArr', _this.sidArr.toString(), 30);
+                            addcookie('numArr', _this.numArr.toString(), 30);
+                        }
+                    });
+                }
             });
             this.$num.on('input', function () {
                 _this.i = parseInt(_this.$num.val());

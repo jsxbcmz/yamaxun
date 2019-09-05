@@ -119,7 +119,7 @@
                     alert('支付宝还是微信');
                 } else {
                     alert('请先登录');
-                    location.href = 'http://10.31.157.44/1907/project/src/login.html';
+                    location.href = 'login.html';
                 }
             })
         }

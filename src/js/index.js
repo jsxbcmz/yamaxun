@@ -115,11 +115,13 @@
                 _this.$ul_li = $('.swiper ul').find('li');
                 _this.$ul_li.first().addClass('active_ul');
                 _this.$ol_li.first().addClass('active_ol');
-                _this.$ol_li.hover(function () {
+
+                _this.$ol_li.on('mouseover', function () {
                     $(this).addClass('active_ol').siblings().removeClass('active_ol');
                     _this.li_index = $(this).index();
                     _this.changeTab(_this.li_index);
                 })
+
             })
             this.$swiper.hover(function () {
                 clearInterval(_this.timer);
@@ -155,8 +157,8 @@
         changeTab(i) {
             this.$ol_li = $('.swiper ol').find('li');
             this.$ul_li = $('.swiper ul').find('li');
-            this.$ul_li.eq(i).fadeIn('slow').siblings().fadeOut('slow');
-            this.$ol_li.eq(i).addClass('active_ol').siblings().removeClass('active_ol');
+            this.$ul_li.eq(i).stop(false, true).fadeIn('slow').siblings().stop(false, true).fadeOut('slow');
+            this.$ol_li.eq(i).stop(false, true).addClass('active_ol').siblings().stop(false, true).removeClass('active_ol');
         }
         rightClick() {
             this.li_index++;

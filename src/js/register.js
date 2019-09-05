@@ -89,12 +89,18 @@
                 _this.$checkState = $('#checkState').prop('checked');
                 if (/^[A-Za-z_]\w{3,15}/.test($('#username').val())) {
                     _this.usernameFlag = true;
+                } else {
+                    _this.usernameFlag = false;
                 }
                 if (/^1[35678]\d{9}$/.test($('#phone').val())) {
                     _this.phoneFlag = true;
+                } else {
+                    _this.phoneFlag = false;
                 }
                 if (/^\w{6,16}$/.test($('#password').val())) {
                     _this.passwordFlag = true;
+                } else {
+                    _this.passwordFlag = false;
                 }
                 if ($('#email').val() && !(/^\w+@[A-Za-z0-9]{2,3}.[A-Za-z0-9]{2,3}$/.test($('#email').val()))) {
                     _this.emailFlag = false;
