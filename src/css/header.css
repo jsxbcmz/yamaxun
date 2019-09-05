@@ -229,7 +229,6 @@
     background: #fff;
     border: 1px solid #aaa;
     z-index: 10;
-    /* display: none; */
 }
 
 .header_bottom_left_detail>div {
@@ -243,6 +242,7 @@
 .header_bottom_left_detail>div:last-child {
     border-top: 1px solid #ccc;
     margin-top: 15px;
+    width: 118px;
 }
 
 .header_bottom_left_detail>div a {

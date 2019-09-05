@@ -38,7 +38,7 @@
                     $('.smallPic img').attr('src', d.url);
                     $('.bigPic').attr('src', d.url);
                     $('.details h3').html(d.title);
-                    $('.details em').html(d.price);
+                    $('.details em').html('￥' + d.price);
                     _this.i = parseInt(_this.$num.val());
                     $('.order em').html('￥' + d.price * _this.i);
                     _this.$addCart.on('click', function () {

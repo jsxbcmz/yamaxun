@@ -229,4 +229,48 @@
         }
     }
     new FIBA().init();
+    //书类排行
+    class book {
+        constructor() {
+            this.$list = $('.bookLists ul');
+            this.arr = [];
+            this.num = 0;
+            this.htmlstr = '';
+        }
+        init() {
+            let _this = this;
+            this.num = randomNum(1, 9);
+            while (this.arr.length < 5) {
+                this.num = randomNum(1, 9);
+                if ($.inArray(this.num, this.arr) == -1) {
+                    this.arr.push(this.num);
+                }
+            }
+            $(document).ready(function () {
+                $.ajax({
+                    url: 'http://10.31.157.44/1907/project/php/book.php',
+                    data: {
+                        arr: _this.arr.toString(),
+                    },
+                    dataType: 'json',
+                    success: function (d) {
+                        $.each(d, function (index, value) {
+                            _this.htmlstr += `
+                            <li class="clearfix">
+                                <span class="fl">${index+1}</span>
+                                <a href="detail.html?sid=${value.sid}" class="fl"
+                                        title="${value.title}">
+                                    <img src="${value.url}" alt="">
+                                </a>
+                             </li>
+                            `;
+                        })
+                        _this.$list.html(_this.htmlstr);
+                    }
+                })
+            });
+
+        }
+    }
+    new book().init();
 })(jQuery);

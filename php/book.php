@@ -4,7 +4,7 @@
 
     $arr=$_GET['arr'];
     
-    $sql = "select * from goodslist where sid in ($arr)";
+    $sql = "select * from booklist where sid in ($arr)";
 
     $result = $conn->query($sql);
 

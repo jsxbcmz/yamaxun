@@ -9,7 +9,7 @@
                     <li>
                         <a href="detail.html?sid=${value.sid}" target="_blank">
                             <div>
-                                <img src="${value.url}"  alt="">
+                                <img src="${value.url}" alt="">
                             </div>
                             <p>${value.title}</p>
                             <span>￥${value.price}</span>
