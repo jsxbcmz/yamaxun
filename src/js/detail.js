@@ -86,6 +86,8 @@
                     _this.$num.val('1');
                     _this.i = 1;
                     _this.$total.html('￥' + (_this.$data.price * _this.i).toFixed(2));
+                } else {
+                    _this.$num.val(_this.i);
                 }
             })
         }

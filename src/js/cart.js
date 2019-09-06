@@ -37,7 +37,6 @@
                     arr: _this.sidArr.toString()
                 },
                 success: function (d) {
-                    console.log(1);
                     $.each(_this.sidArr, function (i, v) {
                         $.each(d, function (index, value) {
                             if (v == value.sid) {
@@ -47,8 +46,8 @@
                                 _this.$clone.find('.content-title').html(value.title);
                                 _this.$clone.find('.price').html('￥' + value.price);
                                 _this.$clone.find('.number input').val(_this.numArr[i]);
-                                _this.$clone.find('.content-title').attr('href', 'detail.html?sid=' + value.sid);
-                                _this.$clone.find('.back').attr('href', 'detail.html?sid=' + value.sid);
+                                _this.$clone.find('.content-title').attr('href', 'detail.html?sid=' + value.sid + '&&type=1');
+                                _this.$clone.find('.back').attr('href', 'detail.html?sid=' + value.sid + '&&type=1');
                                 _this.$clone.css('display', 'flex');
                                 _this.$clone.insertBefore($('.sum'));
                                 _this.totalNum += parseInt(_this.numArr[i]);
