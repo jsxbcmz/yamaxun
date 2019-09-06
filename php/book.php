@@ -1,7 +1,7 @@
 <?php  
 	
     include("conn.php");
-
+if(isset($_GET['arr'])){
     $arr=$_GET['arr'];
     
     $sql = "select * from booklist where sid in ($arr)";
@@ -15,6 +15,19 @@
     }
 
     echo json_encode($res);
+}
+   
 
+if(isset($_GET['sid'])){
+    $sid=$_GET['sid'];
+    
+    $sql = "select * from booklist where sid='$sid'";
+
+    $result = $conn->query($sql);
+
+
+    echo json_encode($result->fetch_assoc());
+}
+    
 
 ?>

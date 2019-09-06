@@ -31,6 +31,7 @@
                     }
                 } else {
                     $(this).removeClass().addClass('normal');
+                    $('.username .wrong').hide();
                 }
 
             });
@@ -49,6 +50,7 @@
                     }
                 } else {
                     $(this).removeClass().addClass('normal');
+                    $('.email .wrong').hide();
                 }
             });
             this.$phone.on('focus', function () {
@@ -66,6 +68,7 @@
                     }
                 } else {
                     $(this).removeClass().addClass('normal');
+                    $('.phone .wrong').hide();
                 }
             });
             this.$password.on('focus', function () {
@@ -83,6 +86,7 @@
                     }
                 } else {
                     $(this).removeClass().addClass('normal');
+                    $('.password .wrong').hide();
                 }
             });
             this.$register.on('click', function () {

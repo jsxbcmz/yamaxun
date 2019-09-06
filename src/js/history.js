@@ -26,7 +26,7 @@
                             $.each(d, function (d_index, d_value) {
                                 if (a_value == d_value.sid) {
                                     _this.str += `
-                                    <a href="detail.html?sid=${d_value.sid}" title="${d_value.title}">
+                                    <a href="detail.html?sid=${d_value.sid}&&type=1" title="${d_value.title}">
                                     <img src="${d_value.url}"
                                     alt=""></a>`;
                                 }

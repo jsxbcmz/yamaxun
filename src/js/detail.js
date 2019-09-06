@@ -2,8 +2,10 @@
     //渲染数据
     class detail {
         constructor() {
-            this.whatId = location.search.split('=')[1];
+            this.whatId = parseInt(location.search.split('=')[1]).toString();
+            this.whatType = location.search.split('=')[2];
             this.listArr = [];
+            this.url = '';
             this.listStr = '';
             this.sidArr = [];
             this.numArr = [];
@@ -16,15 +18,25 @@
         }
         init() {
             let _this = this;
+            switch (this.whatType) {
+                case '1':
+                    this.url = 'http://10.31.157.44/1907/project/php/detail.php';
+                    break;
+                case '2':
+                    this.url = 'http://10.31.157.44/1907/project/php/book.php';
+                    break;
+            }
             $.ajax({
-                url: 'http://10.31.157.44/1907/project/php/detail.php',
+                url: _this.url,
                 data: {
-                    sid: this.whatId
+                    sid: _this.whatId
                 },
                 dataType: 'json',
                 success: function (d) {
                     _this.$data = d;
-                    _this.listArr = d.urls.split(',');
+                    if (d.urls) {
+                        _this.listArr = d.urls.split(',');
+                    }
                     _this.listStr = '';
                     $.each(_this.listArr, function (index, value) {
                         _this.listStr += `
@@ -38,20 +50,25 @@
                     $('.smallPic img').attr('src', d.url);
                     $('.bigPic').attr('src', d.url);
                     $('.details h3').html(d.title);
-                    $('.details em').html('￥' + d.price);
+                    $('.details em').html('￥' + (d.price || '占位符'));
                     _this.i = parseInt(_this.$num.val());
-                    $('.order em').html('￥' + d.price * _this.i);
+                    $('.order em').html('￥' + (d.price * _this.i || '占位符'));
                     _this.$addCart.on('click', function () {
-                        _this.getArr();
-                        if ($.inArray(_this.whatId, _this.sidArr) != -1) {
-                            _this.j = parseInt(_this.numArr[$.inArray(_this.whatId, _this.sidArr)]) + _this.i;
-                            _this.numArr[$.inArray(_this.whatId, _this.sidArr)] = _this.j;
-                            addcookie('numArr', _this.numArr.toString(), 30);
+                        if (_this.whatType == '1') {
+                            _this.getArr();
+                            if ($.inArray(_this.whatId, _this.sidArr) != -1) {
+                                _this.j = parseInt(_this.numArr[$.inArray(_this.whatId, _this.sidArr)]) + _this.i;
+                                _this.numArr[$.inArray(_this.whatId, _this.sidArr)] = _this.j;
+                                addcookie('numArr', _this.numArr.toString(), 30);
+                            } else {
+                                _this.sidArr.push(_this.whatId);
+                                _this.numArr.push(_this.i);
+                                addcookie('sidArr', _this.sidArr.toString(), 30);
+                                addcookie('numArr', _this.numArr.toString(), 30);
+                            }
                         } else {
-                            _this.sidArr.push(_this.whatId);
-                            _this.numArr.push(_this.i);
-                            addcookie('sidArr', _this.sidArr.toString(), 30);
-                            addcookie('numArr', _this.numArr.toString(), 30);
+                            alert('到Kindle上购买');
+                            return false;
                         }
                     });
                 }
@@ -199,18 +216,21 @@
     class userHistory {
         constructor() {
             this.historyArr = [];
-            this.whatId = location.search.split('=')[1];
+            this.whatId = parseInt(location.search.split('=')[1]).toString();
+            this.whatType = (location.search.split('=')[2]);
         }
         init() {
-            if (getcookie('history')) {
-                this.historyArr = getcookie('history').split(',');
-            } else {
-                this.historyArr = [];
+            if (this.whatType == '1') {
+                if (getcookie('history')) {
+                    this.historyArr = getcookie('history').split(',');
+                } else {
+                    this.historyArr = [];
+                }
+                if ($.inArray(this.whatId, this.historyArr) == -1) {
+                    this.historyArr.push(this.whatId);
+                }
+                addcookie('history', this.historyArr.toString(), 30);
             }
-            if ($.inArray(this.whatId, this.historyArr) == -1) {
-                this.historyArr.push(this.whatId);
-            }
-            addcookie('history', this.historyArr.toString(), 30);
         }
     }
     new userHistory().init();

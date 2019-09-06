@@ -7,7 +7,7 @@
             $.each(d, function (index, value) {
                 htmlstr += `
                     <li>
-                        <a href="detail.html?sid=${value.sid}" target="_blank">
+                        <a href="detail.html?sid=${value.sid}&&type=1" target="_blank">
                             <div>
                                 <img src="${value.url}" alt="">
                             </div>

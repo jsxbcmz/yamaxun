@@ -258,7 +258,7 @@
                             _this.htmlstr += `
                             <li class="clearfix">
                                 <span class="fl">${index+1}</span>
-                                <a href="detail.html?sid=${value.sid}" class="fl"
+                                <a href="detail.html?sid=${value.sid}&&type=2" class="fl"
                                         title="${value.title}">
                                     <img src="${value.url}" alt="">
                                 </a>

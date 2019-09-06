@@ -400,10 +400,13 @@
     background-image: url(https://images-cn.ssl-images-amazon.com/images/G/28/gno/sprites/global-sprite-32-v1._CB476259932_.png);
 }
 
-.shopping_num {
+.header_nav .shopping_num {
+    width: 20px;
+    text-align: center;
     color: #e47911;
     font-size: 16px;
     font-weight: 700;
+    margin-left: -5px;
 }
 
 .up_arrow {

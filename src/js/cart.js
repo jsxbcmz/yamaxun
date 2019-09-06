@@ -37,6 +37,7 @@
                     arr: _this.sidArr.toString()
                 },
                 success: function (d) {
+                    console.log(1);
                     $.each(_this.sidArr, function (i, v) {
                         $.each(d, function (index, value) {
                             if (v == value.sid) {
@@ -94,7 +95,19 @@
                     _this.numArr.splice(_this.j, 1);
                     addcookie('sidArr', _this.sidArr.toString(), 30);
                     addcookie('numArr', _this.numArr.toString(), 30);
-                    window.location.reload();
+                    // window.location.reload();
+                    let obj = $(this).parents('.items:visible');
+                    obj.animate({
+                        'margin-left': -960
+                    }, function () {
+                        obj.hide();
+                        _this.calPrice();
+                        $('.shopping_num ').html(_this.sidArr.length || 0);
+                        if (_this.sidArr.length < 1) {
+                            $('.empty').show();
+                            $('body>.cart').hide();
+                        }
+                    })
                 }
 
             })
@@ -174,6 +187,7 @@
         }
         //当数量为0时，快速按'-'按钮，会有是否删除提示
         quickClick(obj) {
+            let _this = this;
             this.temp++;
             if (!this.timerId) {
                 this.timerId = setInterval(function () {
@@ -197,7 +211,18 @@
                     this.numArr.splice(this.j, 1);
                     addcookie('sidArr', this.sidArr.toString(), 30);
                     addcookie('numArr', this.numArr.toString(), 30);
-                    window.location.reload();
+                    let obj1 = obj.parents('.items:visible');
+                    obj1.animate({
+                        'margin-left': -960
+                    }, function () {
+                        obj1.hide();
+                        $('.shopping_num ').html(_this.sidArr.length || 0);
+                        _this.calPrice();
+                        if (_this.sidArr.length < 1) {
+                            $('.empty').show();
+                            $('body>.cart').hide();
+                        }
+                    })
                 }
             } else if (this.temp < 5 && this.timerNum == 3) {
                 this.reset();
